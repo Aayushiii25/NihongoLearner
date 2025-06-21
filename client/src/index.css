@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  /* Nihongo Custom Colors */
+  --sakura-50: hsl(340, 100%, 95%);
+  --sakura-100: hsl(338, 100%, 85%);
+  --sakura-200: hsl(336, 100%, 75%);
+  --sakura-300: hsl(334, 100%, 70%);
+  --sakura-400: hsl(332, 100%, 65%);
+  --sakura-500: hsl(330, 81%, 60%);
+  --sakura-600: hsl(328, 85%, 55%);
+  --sakura-700: hsl(326, 90%, 45%);
+  --sakura-800: hsl(324, 95%, 35%);
+  --sakura-900: hsl(322, 100%, 25%);
+
+  --japanese-gold: hsl(51, 100%, 50%);
+  --japanese-red: hsl(0, 100%, 60%);
+  --japanese-cream: hsl(60, 100%, 97%);
+  --japanese-charcoal: hsl(210, 29%, 24%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  }
+
+  .font-japanese {
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .font-english {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .bg-sakura-gradient {
+    background: linear-gradient(135deg, var(--sakura-50) 0%, var(--sakura-300) 50%, var(--sakura-500) 100%);
+  }
+
+  .bg-cultural-overlay {
+    background: linear-gradient(rgba(255, 224, 230, 0.9), rgba(233, 30, 99, 0.9));
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .chat-bubble {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .floating-element {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .sakura-50 { color: var(--sakura-50); }
+  .sakura-100 { color: var(--sakura-100); }
+  .sakura-200 { color: var(--sakura-200); }
+  .sakura-300 { color: var(--sakura-300); }
+  .sakura-400 { color: var(--sakura-400); }
+  .sakura-500 { color: var(--sakura-500); }
+  .sakura-600 { color: var(--sakura-600); }
+  .sakura-700 { color: var(--sakura-700); }
+  .sakura-800 { color: var(--sakura-800); }
+  .sakura-900 { color: var(--sakura-900); }
+
+  .bg-sakura-50 { background-color: var(--sakura-50); }
+  .bg-sakura-100 { background-color: var(--sakura-100); }
+  .bg-sakura-200 { background-color: var(--sakura-200); }
+  .bg-sakura-300 { background-color: var(--sakura-300); }
+  .bg-sakura-400 { background-color: var(--sakura-400); }
+  .bg-sakura-500 { background-color: var(--sakura-500); }
+  .bg-sakura-600 { background-color: var(--sakura-600); }
+  .bg-sakura-700 { background-color: var(--sakura-700); }
+  .bg-sakura-800 { background-color: var(--sakura-800); }
+  .bg-sakura-900 { background-color: var(--sakura-900); }
+
+  .text-sakura-50 { color: var(--sakura-50); }
+  .text-sakura-100 { color: var(--sakura-100); }
+  .text-sakura-200 { color: var(--sakura-200); }
+  .text-sakura-300 { color: var(--sakura-300); }
+  .text-sakura-400 { color: var(--sakura-400); }
+  .text-sakura-500 { color: var(--sakura-500); }
+  .text-sakura-600 { color: var(--sakura-600); }
+  .text-sakura-700 { color: var(--sakura-700); }
+  .text-sakura-800 { color: var(--sakura-800); }
+  .text-sakura-900 { color: var(--sakura-900); }
+
+  .border-sakura-50 { border-color: var(--sakura-50); }
+  .border-sakura-100 { border-color: var(--sakura-100); }
+  .border-sakura-200 { border-color: var(--sakura-200); }
+  .border-sakura-300 { border-color: var(--sakura-300); }
+  .border-sakura-400 { border-color: var(--sakura-400); }
+  .border-sakura-500 { border-color: var(--sakura-500); }
+  .border-sakura-600 { border-color: var(--sakura-600); }
+  .border-sakura-700 { border-color: var(--sakura-700); }
+  .border-sakura-800 { border-color: var(--sakura-800); }
+  .border-sakura-900 { border-color: var(--sakura-900); }
+
+  .hover\:bg-sakura-50:hover { background-color: var(--sakura-50); }
+  .hover\:bg-sakura-100:hover { background-color: var(--sakura-100); }
+  .hover\:bg-sakura-200:hover { background-color: var(--sakura-200); }
+  .hover\:bg-sakura-300:hover { background-color: var(--sakura-300); }
+  .hover\:bg-sakura-400:hover { background-color: var(--sakura-400); }
+  .hover\:bg-sakura-500:hover { background-color: var(--sakura-500); }
+  .hover\:bg-sakura-600:hover { background-color: var(--sakura-600); }
+  .hover\:bg-sakura-700:hover { background-color: var(--sakura-700); }
+  .hover\:bg-sakura-800:hover { background-color: var(--sakura-800); }
+  .hover\:bg-sakura-900:hover { background-color: var(--sakura-900); }
+
+  .hover\:text-sakura-50:hover { color: var(--sakura-50); }
+  .hover\:text-sakura-100:hover { color: var(--sakura-100); }
+  .hover\:text-sakura-200:hover { color: var(--sakura-200); }
+  .hover\:text-sakura-300:hover { color: var(--sakura-300); }
+  .hover\:text-sakura-400:hover { color: var(--sakura-400); }
+  .hover\:text-sakura-500:hover { color: var(--sakura-500); }
+  .hover\:text-sakura-600:hover { color: var(--sakura-600); }
+  .hover\:text-sakura-700:hover { color: var(--sakura-700); }
+  .hover\:text-sakura-800:hover { color: var(--sakura-800); }
+  .hover\:text-sakura-900:hover { color: var(--sakura-900); }
+
+  .text-japanese-gold { color: var(--japanese-gold); }
+  .text-japanese-red { color: var(--japanese-red); }
+  .text-japanese-cream { color: var(--japanese-cream); }
+  .text-japanese-charcoal { color: var(--japanese-charcoal); }
+
+  .bg-japanese-gold { background-color: var(--japanese-gold); }
+  .bg-japanese-red { background-color: var(--japanese-red); }
+  .bg-japanese-cream { background-color: var(--japanese-cream); }
+  .bg-japanese-charcoal { background-color: var(--japanese-charcoal); }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0px); opacity: 1; }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
